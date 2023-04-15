@@ -283,11 +283,11 @@ input {
     min-width: 200px;
     padding: 25px 20px;
     margin: auto;
-    background: linear-gradient(to bottom right, rgb(201, 231, 230), rgb(72, 221, 255));
+    background-color: #ECFDF5;
     text-align: center;
     border-radius: 0.9rem;
-    box-shadow: 2px 2px 100px rgb(2, 20, 70);
-    color: rgb(37, 89, 209);
+    box-shadow: 2px 2px 100px rgba(6, 95, 70, 0.5);
+    color: #065F46;
     font-family: 'Smythe', cursive;
     font-size: 25px;
     font-weight: 900;
