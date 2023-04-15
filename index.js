@@ -184,9 +184,9 @@ function getOrderslist() {
   let orderedFeedHtml = "";
 
   orderSummary.forEach(function (order) {
-    orderedFeedHtml += `<div id="${order.id}">
+    orderedFeedHtml += `<div id="${order.id}" >
     <div>
-      <div class="product-name" id="product-name"><div id="product-quantity">${order.quantity}x</div> <div>${order.title}</div><div class="remove-btn" data-remove="${order.id}">remove</div></div>
+      <div class="product-name" id="product-name"><span class="product-quantity">${order.quantity}x</span> ${order.title}<span class="remove-btn" data-remove="${order.id}">remove</span></div>
         </div>
       <div class="order-price">$${order.price}</div>
     </div>`;

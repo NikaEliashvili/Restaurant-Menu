@@ -122,8 +122,10 @@ main {
 
 .remove-btn {
     font-size: 16px;
-    font-weight: 300;
+    font-weight: 600;
     text-decoration: underline;
+    padding-left: 1rem;
+    color: #ff0000;
     cursor: pointer;
 }
 
@@ -300,4 +302,14 @@ input {
 
 img {
     width: 80px;
+}
+
+.product-quantity {
+    padding: 0 1rem 0 0;
+}
+
+@media (max-width:376px) {
+    .products-ingredients {
+        font-size: 1rem;
+    }
 }
