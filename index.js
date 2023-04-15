@@ -119,42 +119,46 @@ function completeBtnFunct() {
 
 function payBtnFunct() {
   if (ownerName.value && cardNum.value && cardCvv.value) {
-    formContainer.classList.add("hidden");
-    offTotalPriceSection();
-    while (orderSummary.length != 0) {
-      let i = 0;
-      orderSummary.splice(i, 1);
-      i++;
-    }
-    orderProducts.innerHTML = orderSummary.slice(0).join("");
-    thanksDiv.classList.remove("hidden");
-    let feedHtml = ``;
+    if (cardNum.value.length === 16 && cardCvv.value.length === 3) {
+      formContainer.classList.add("hidden");
+      offTotalPriceSection();
+      while (orderSummary.length != 0) {
+        let i = 0;
+        orderSummary.splice(i, 1);
+        i++;
+      }
+      orderProducts.innerHTML = orderSummary.slice(0).join("");
+      thanksDiv.classList.remove("hidden");
+      let feedHtml = ``;
 
-    menuArray.forEach(function (product) {
-      let rotateIcon = `style="--fa-rotate-angle: 90deg;"`;
+      menuArray.forEach(function (product) {
+        let rotateIcon = `style="--fa-rotate-angle: 90deg;"`;
 
-      feedHtml += `<div class="products">
-        <div class="products-images"><img src="${product.image}"></div>
-        <div class="products-info">
-          <div class="products-name">${product.title}</div>
-          <div class="products-ingredients">${product.ingredients}</div>
-          <div class="products-price">$${product.price}</div>
-        </div>
-        <button  class="add-icon fa-sharp fa-solid fa-circle-plus fa-rotate-by add-btn-icon" ${rotateIcon}  data-add="${product.id}"></button>
-        </div>`;
-    });
-    mainRender.innerHTML = feedHtml;
-    thanksDiv.innerHTML = `Thanks,<span class="nameletters"> ${ownerName.value}</span>! Your order is on its way!`;
-    ownerName.value = ``;
-    cardNum.value = ``;
-    cardCvv.value = ``;
+        feedHtml += `<div class="products">
+          <div class="products-images"><img src="${product.image}"></div>
+          <div class="products-info">
+            <div class="products-name">${product.title}</div>
+            <div class="products-ingredients">${product.ingredients}</div>
+            <div class="products-price">$${product.price}</div>
+          </div>
+          <button  class="add-icon fa-sharp fa-solid fa-circle-plus fa-rotate-by add-btn-icon" ${rotateIcon}  data-add="${product.id}"></button>
+          </div>`;
+      });
+      mainRender.innerHTML = feedHtml;
+      thanksDiv.innerHTML = `Thanks,<span class="nameletters"> ${ownerName.value}</span>! Your order is on its way!`;
+      ownerName.value = ``;
+      cardNum.value = ``;
+      cardCvv.value = ``;
 
-    if (payBtnFunct) {
-      setTimeout(() => {
-        thanksDiv.classList.add("hidden");
-      }, 6000);
+      if (payBtnFunct) {
+        setTimeout(() => {
+          thanksDiv.classList.add("hidden");
+        }, 6000);
 
-      totalPrice = 0;
+        totalPrice = 0;
+      }
+    } else {
+      alert("Card Number must be 16 digits and Cvv must be 3 digits");
     }
   }
 }

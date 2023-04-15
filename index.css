@@ -1,5 +1,5 @@
 body {
-    padding: 0;
+    padding: 0 0 20px 0;
     margin: 0 0 20px 0px;
     font-family: 'Smythe', cursive;
 }
@@ -281,10 +281,11 @@ input {
     min-width: 200px;
     padding: 25px 20px;
     margin: auto;
-    background-color: #e2f7ed;
+    background: linear-gradient(to bottom right, rgb(201, 231, 230), rgb(72, 221, 255));
     text-align: center;
     border-radius: 0.9rem;
-    color: rgb(3, 68, 68);
+    box-shadow: 2px 2px 100px rgb(2, 20, 70);
+    color: rgb(37, 89, 209);
     font-family: 'Smythe', cursive;
     font-size: 25px;
     font-weight: 900;
@@ -294,7 +295,6 @@ input {
 .nameletters {
     font-size: 24px;
     font-weight: 900;
-    color: rgb(24, 53, 4);
 }
 
 
